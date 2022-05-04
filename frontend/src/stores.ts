@@ -1,8 +1,21 @@
-import { writable } from "svelte/store";
+import { writable, readable } from "svelte/store";
 import constants from "./constants";
 
 const stats = writable({ ...constants.DEFAULT_STATS });
 const connected = writable(false);
+
+function get_ruleset() {
+  const params = new URLSearchParams(window.location.search);
+  let ruleset = parseInt(params.get("ruleset"));
+  if (ruleset == null || isNaN(ruleset) || ruleset < 1 || ruleset > 2) {
+    ruleset = 1;
+  }
+
+  return ruleset;
+}
+
+const ruleset = get_ruleset();
+
 let ws = null;
 
 function connect() {
@@ -37,4 +50,5 @@ connect();
 export default {
   stats,
   connected,
+  ruleset,
 };
