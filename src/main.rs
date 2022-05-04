@@ -13,7 +13,7 @@ use static_files::Resource;
 use tokio::select;
 use tokio::sync::broadcast::{channel, Receiver, Sender};
 
-use classic_trackers::mem_reader::{run_forever, TrackerMessage};
+use classic_stats_tracker::mem_reader::{run_forever, TrackerMessage};
 
 include!(concat!(env!("OUT_DIR"), "/generated.rs"));
 
