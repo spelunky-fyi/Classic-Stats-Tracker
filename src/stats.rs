@@ -112,7 +112,7 @@ pub struct Stats {
     pub items_bought: f64,
     pub items_stolen: f64,
     pub dice_games_played: f64,
-    pub dices_games_won: f64,
+    pub dice_games_won: f64,
     pub dice_games_lost: f64,
 
     pub level_deaths: LevelDeaths,
@@ -139,7 +139,7 @@ impl Stats {
         println!("Items Stolen:      {}", self.items_stolen);
 
         println!("Dice Games Played: {}", self.dice_games_played);
-        println!("Dice Games Won:    {}", self.dices_games_won);
+        println!("Dice Games Won:    {}", self.dice_games_won);
         println!("Dice Games Lost:   {}", self.dice_games_lost);
 
         println!("");
@@ -333,7 +333,7 @@ impl Stats {
         self.dice_games_played = cursor.read_f64::<LE>()?;
         cursor.seek(Current(8 * 4))?;
 
-        self.dices_games_won = cursor.read_f64::<LE>()?;
+        self.dice_games_won = cursor.read_f64::<LE>()?;
         cursor.seek(Current(8 * 4))?;
 
         self.dice_games_lost = cursor.read_f64::<LE>()?;

@@ -11,7 +11,7 @@ const DEFAULT_STATS = {
   items_bought: 0.0,
   items_stolen: 0.0,
   dice_games_played: 0.0,
-  dices_games_won: 0.0,
+  dice_games_won: 0.0,
   dice_games_lost: 0.0,
   level_deaths: {
     level_1: 0.0,
