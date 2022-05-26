@@ -8,7 +8,7 @@ function get_ruleset() {
   const params = new URLSearchParams(window.location.search);
   let ruleset = parseInt(params.get("ruleset"));
   if (ruleset == null || isNaN(ruleset) || ruleset < 1 || ruleset > 2) {
-    ruleset = 1;
+    ruleset = 2;
   }
 
   return ruleset;
